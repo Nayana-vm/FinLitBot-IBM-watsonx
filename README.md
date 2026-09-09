@@ -1,5 +1,5 @@
-FINLITBOT LOCAL RUNTIME ENVIRONMENT & NETWORK ADDRESSESProtocol:             HTTP / 1.1Default Host:         127.0.0.1  (Localhost loopback)Network Host:         0.0.0.0    (All active interfaces)Assigned Port:        5000       (Standard Flask Development Port)Primary Application URL:👉 http://localhost:5000/👉 http://127.0.0.1:5000/Alternate / Production Fallback Port:
-👉 http://127.0.0.1:8080/ (Configurable via PORT=8080 in .env)
+FINLITBOT LOCAL RUNTIME ENVIRONMENT & NETWORK ADDRESSESProtocol:             HTTP / 1.1Default Host:         127.0.0.1  (Localhost loopback)Network Host:         0.0.0.0    (All active interfaces)Assigned Port:        5000       (Standard Flask Development Port)Primary Application URL: http://localhost:5000/  http://127.0.0.1:5000/Alternate / Production Fallback Port:
+ http://127.0.0.1:8080/ (Configurable via PORT=8080 in .env)
 ### Active REST Endpoints Reference Table
 
 | HTTP Method | Route Endpoint | Purpose / Functionality | Source / Target Service |
@@ -12,20 +12,11 @@ FINLITBOT LOCAL RUNTIME ENVIRONMENT & NETWORK ADDRESSESProtocol:             HTT
 
 ---
 
-## 🏛️ System Architecture
+## System Architecture
+<img width="8192" height="2744" alt="FinTech EMI Calculation-2026-09-09-204318" src="https://github.com/user-attachments/assets/47921fc9-5b22-4413-beb4-a70ae7afcda1" />
 
-                                  +------------------------------------+
-                                  |     User Interface (Web Client)    |
-                                  |      Vanilla HTML5 / CSS3 / JS     |
-                                  |     Runs on: http://localhost:5000 |
-                                  +-----------------+------------------+
-                                                    |
-                                        HTTP POST   | JSON Payload
-                                        /api/chat   v
-+-------------------------------------------------------+----------------------------------+| FLASK APPLICATION MIDDLEWARE (app.py)                                                    ||                                                                                          ||   1. Input Sanitization & Privacy Guardrails (Regex PII Masking: Aadhaar, PAN, Card No.) ||   2. Emergency Keyword Interceptor (Triggers 1930 Helpline workflow if fraud is active)  ||   3. Domain RAG Context Injector (RBI Guidelines, NPCI UPI Architecture, Cyber Laws)     |+-------------------------------------------------------+----------------------------------+|IBM Cloud IAM Bearer | Token Authv+------------------------------------------------------------------------------------------+| IBM watsonx.ai STUDIO & RUNTIME                                                         ||                                                                                          ||   - Region: Dallas (us-south) | Project ID: cf0ca7b7-d874-4c48-9ef4-122f821fb663        ||   - Foundation Model: ibm/granite-3-8b-instruct                                          ||   - Prompt Lab Resource Tracking: ~8,600 Tokens Logged & Verified                        |+------------------------------------------------------------------------------------------+
----
 
-## 🚀 Key Features
+##  Key Features
 
 * **Instant Golden Hour Triage Engine:** Guides victims step-by-step through bank account freezing, UPI ID disabling, and lodging a complaint with the National Cyber Crime Helpline (**1930** or [cybercrime.gov.in](https://cybercrime.gov.in)) within the first 2 hours to facilitate transaction freeze under CFCFRMS.
 * **The "Golden UPI Rule" Enforcer:** Proactively detects common marketplace scams (OLX, Quikr) and reinforces the fundamental rule: **Entering a UPI PIN or scanning a QR code is strictly for SENDING money, NEVER for receiving money.**
@@ -35,7 +26,7 @@ FINLITBOT LOCAL RUNTIME ENVIRONMENT & NETWORK ADDRESSESProtocol:             HTT
 
 ---
 
-## 📊 IBM watsonx Resource Usage Verification (Slide 12 Proof)
+##  IBM watsonx Resource Usage Verification (Slide 12 Proof)
 
 As required by the Edunet evaluation rubric, all foundation model runs were executed on active IBM Cloud infrastructure:
 
@@ -47,7 +38,7 @@ As required by the Edunet evaluation rubric, all foundation model runs were exec
 
 ---
 
-## 📂 Repository File Structure
+##  Repository File Structure
 
 ```text
 FinLitBot-IBM-watsonx/
@@ -91,7 +82,7 @@ FLASK_DEBUG=True
 7. Access FinLitBot in BrowserOpen your web browser and navigate to:http://localhost:5000/
    or
 [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
-🧪 Testing Prompts for EvaluationScenarioInput Query PromptExpected FinLitBot BehaviorMarketplace QR Scam"Someone on OLX is buying my sofa and sent a QR code telling me to scan and enter my UPI PIN to receive payment. Is this legit?"Intercepts scam; explains that UPI PINs are only used to debit money, never to credit.Emergency Golden Hour"Help! I clicked a fake electricity bill link and 50,000 was debited right now! What do I do?"Triggers immediate Golden Hour triage: Call 1930, notify bank nodal officer, preserve transaction reference / UTR.Screen Sharing Warning"Customer support asked me to install AnyDesk on my phone to process my refund. Should I?"Warns against AnyDesk/TeamViewer installation; details remote control risks and account takeover tactics.Financial Literacy"What is the 50/30/20 budgeting rule and how does an emergency fund help protect against cyber emergencies?"Provides structured financial planning guidance grounded in financial literacy fundamentals.📑 Edunet / AICTE Deliverables Checklist (Slide 22 Compliance)[x] Agent relevant files of IBM Cloud: Flask backend (app.py), UI templates, styling, requirements.[x] Problem Statement File: Uploaded as docs/yourproblemstatement.pdf.[x] Project Presentation: Uploaded as AICTE_IBM_BOB_Project_Submission_Template_for_EduentFoundation.pptx.[x] Resource Usage Proof: Slide 12 documented with before and after token metrics (~8,600 tokens).[x] Public GitHub Repository: https://github.com/Nayana-vm/FinLitBot-IBM-watsonx.📄 License & AcknowledgmentsThis project is developed as part of the AICTE – IBM SkillsBuild / Edunet Foundation Internship Program. Special thanks to the mentors and evaluators from IBM and Edunet Foundation for technical guidance on IBM watsonx.ai and the Granite model family."""with open("README.md", "w", encoding="utf-8") as f:f.write(readme_content.strip() + "\n")print("README.md created successfully!")
+ Testing Prompts for EvaluationScenarioInput Query PromptExpected FinLitBot BehaviorMarketplace QR Scam"Someone on OLX is buying my sofa and sent a QR code telling me to scan and enter my UPI PIN to receive payment. Is this legit?"Intercepts scam; explains that UPI PINs are only used to debit money, never to credit.Emergency Golden Hour"Help! I clicked a fake electricity bill link and 50,000 was debited right now! What do I do?"Triggers immediate Golden Hour triage: Call 1930, notify bank nodal officer, preserve transaction reference / UTR.Screen Sharing Warning"Customer support asked me to install AnyDesk on my phone to process my refund. Should I?"Warns against AnyDesk/TeamViewer installation; details remote control risks and account takeover tactics.Financial Literacy"What is the 50/30/20 budgeting rule and how does an emergency fund help protect against cyber emergencies?"Provides structured financial planning guidance grounded in financial literacy fundamentals.📑 Edunet / AICTE Deliverables Checklist (Slide 22 Compliance)[x] Agent relevant files of IBM Cloud: Flask backend (app.py), UI templates, styling, requirements.[x] Problem Statement File: Uploaded as docs/yourproblemstatement.pdf.[x] Project Presentation: Uploaded as AICTE_IBM_BOB_Project_Submission_Template_for_EduentFoundation.pptx.[x] Resource Usage Proof: Slide 12 documented with before and after token metrics (~8,600 tokens).[x] Public GitHub Repository: https://github.com/Nayana-vm/FinLitBot-IBM-watsonx.📄 License & AcknowledgmentsThis project is developed as part of the AICTE – IBM SkillsBuild / Edunet Foundation Internship Program. Special thanks to the mentors and evaluators from IBM and Edunet Foundation for technical guidance on IBM watsonx.ai and the Granite model family."""with open("README.md", "w", encoding="utf-8") as f:f.write(readme_content.strip() + "\n")print("README.md created successfully!")
 ```text?code_stdout&code_event_index=1
 README.md created successfully!
 
