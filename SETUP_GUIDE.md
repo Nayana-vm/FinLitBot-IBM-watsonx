@@ -10,3 +10,11 @@
 1. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   ```
+
+## Scan all refs for a specific repository path
+Run the script below from the repository root to fetch all refs/tags, unshallow if needed, and check each branch/tag tip for the target PPT path:
+
+```bash
+./scripts_scan_refs_for_path.sh
+```
